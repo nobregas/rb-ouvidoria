@@ -70,6 +70,7 @@ end
 manifestacoes = Array.new
 
 menu = "
+  ==Menu==
   1 - Cadastrar manifestacao
   2 - Listar manifestacoes
   3 - Obter manifestacao por id
@@ -79,12 +80,12 @@ menu = "
 "
 
 loop do 
-
+  Gem.win_platform? ? (system "cls") : (system "clear")
   puts menu
 
   print "Insira sua opcao: "
   opcao = gets.chomp.to_i 
-
+  Gem.win_platform? ? (system "cls") : (system "clear")
   case opcao
     #Cadastrar
   when 1
@@ -106,6 +107,11 @@ loop do
   when 5
     puts "Obrigado por usar nosso sistema"
   end
-  break if opcao == 5
+  
+  if opcao == 5
+    break
+  else
+    system "pause"
+  end
 end
 
